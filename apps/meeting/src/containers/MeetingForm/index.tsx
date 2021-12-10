@@ -173,14 +173,16 @@ const MeetingForm: React.FC = () => {
         onChange={toggleWebAudio}
         infoText="Enable Web Audio to use Voice Focus"
       />
-      <FormField
-        field={Checkbox}
-        label="Enable Echo Reduction"
-        value=""
-        checked={isEchoReductionEnabled}
-        onChange={toggleEchoReduction}
-        infoText="Enable Echo Reduction (new meetings only)"
-      />
+      { isWebAudioEnabled &&
+        <FormField
+          field={Checkbox}
+          label="Enable Echo Reduction"
+          value=""
+          checked={isEchoReductionEnabled}
+          onChange={toggleEchoReduction}
+          infoText="Enable Echo Reduction (new meetings only)"
+        />
+      }
       {/* <BlurSelection/> */}
       <FormField
         field={Select}
